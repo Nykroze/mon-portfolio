@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+ --max-width: 1200px ;
+}
+/* le code en dessous me permet de gérer la de facon "par default" comme le background de la page ,*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+    
+}
+main{
+    margin-top: 80px;
+    display: grid;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    background-color:white ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    width: 100%;
+    
+    
+    
+}    /* changement de style de font de ma classe logo*/
+.logo{
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 700;
+    cursor: pointer;
+
+
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+/*le code en dessous nous permet e centrer le header */
+header{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+}
+
+
+
+/*les code en dessous nous permet d'enlever de design par defaut des lien */
+a{
+    text-decoration: none;
+    
+}
+.nav__links a{
+    list-style: none;
+    color: black
+}
+
+/* le code en dessous me permet de mettre le contenue sur la meme ligne */
+.nav__links li{
+    display: inline-flex;
+  
+    padding: 0 5px;
+}
+/*les code en essous nous permet de donnez un effet de transition a la class selectionner */
+.nav__links li a  {
+    transition: transform.3  ;
+}
+.nav__links li a:hover{
+    color: #0C969C;
+}
+.effet{
+    transition: .2s;
+}
+.effet:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.2);
+}
+/*le code en dessous va me permettre  de changer la le style d'un des élement de la navBAR */
+.effet{
+    font-family: Montserrat;;
+}
+/*les code en essous son pour une section dans la partie main du html*/
+.section__hero{
+    
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    align-content: space-between;margin-bottom: 0;
+    bottom: 0;
+    
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.subtitlte{
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+title span{
+    font-weight: 600;
+}
+.description{
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+}
+.action__btns{
+    display: flex;
+    gap: 1rem;
+}
+.action__btns button{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.hire__me{
+    background: none;
+}
+.hire__me:hover{
+    color: #0C969C
+    
+}
+.portfolio{
+    background: none;
+}
+.portfolio:hover{
+    color: #0C969C;
+}
+.image{
+    display: grid;
+    grid-row: auto;
+    align-items: top;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.image img{
+    height: 350px;
+    width: 270px;
+    border-radius: 25%;
+}
+/*cette partie du code npus permet de gérer le responsive design de la page web, (les ecran en dessous de 750 pixel de large )*/
+@media  (width < 750px) {
+    .section__hero{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .action__btns{
+        display: flex;
+        justify-content: center; 
+    }
+    .image{
+        display: inline;
+        height: auto; 
+    }
+   
+    
+    
+    
+}
+/*le code en dessous est la source de configuration du style du portfolio*/
+.title__portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.portfolio__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap ;
+}
+.portfolio__item{
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    gap: 10px;
+    transition: .2s;
+}
+.portfolio__item:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.portfolio__item img{
+    border-radius: 50px;
+
+}
+
+
+.section__portfolio{
+    
+    margin-top: 150px;
+}
+.description__projets{
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*le code en dessous nous permet de fixer le footer en bas de la page */
+footer{
+    
+display:flex;
+    flex-direction: column;    
+    margin-top: 50px;
+    color: black;      
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: none;
+    border-top: solid black;
+}
+    
+    
+
+
+
