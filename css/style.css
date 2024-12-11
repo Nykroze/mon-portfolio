@@ -201,7 +201,7 @@ title span{
     flex-wrap: wrap ;
 }
 .portfolio__item{
-    background-color: rgb(255, 255, 255);
+    background-color: none;
     padding: 5px;
     text-align: center;
     gap: 10px;
