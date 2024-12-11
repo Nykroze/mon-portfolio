@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             break;
        }
        squares[pacmanCurrentIndex].classList.add('pac-man');
-    //    chekcForWin();
-    //    chekcForGameOver();
+       chekcForWin();
+       chekcForGameOver();
        pacDotEaten();
        powerPelletEaten();
     }
@@ -138,9 +138,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(squares[pacmanCurrentIndex].classList.contains('power-pellet')){
             score+=10;
             scoreDisplay.innerHTML=score;
+
+            ghosts.forEach(ghost=> ghost.isScared = true);
+            setTimeout(unScareGhosts, 10000);
+
             squares[pacmanCurrentIndex].classList.remove('power-pellet')
         }
     }
+    // make the gosts stop flashing
+    function unScareGhosts(){
+        ghosts.forEach(ghost=> ghost.isScared=false)
+    }
+
+
+
+
         //all my ghosts
     class Ghost{
         constructor(className,startIndex,speed){
@@ -163,8 +175,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         console.log(ghosts)
         //draw my ghost
         ghosts.forEach(ghost => {
-            squares[ghost.currentIndex].classList.add(ghost.className)
-            squares[ghost.currentIndex].classList.add('ghost')
+            squares[ghost.currentIndex].classList.add(ghost.className,'ghost');
+
         }); 
         // ghosts ranomly
 
@@ -173,7 +185,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         function moveGhost(ghost){
             console.log(ghost)
             const directions = [-1,1,width,-width]
-            const direction = directions[Math.floor(Math.random()* directions.length)];
+            let  direction = directions[Math.floor(Math.random()* directions.length)];
 
             ghost.timerId =setInterval(function(){
                 if(
@@ -181,16 +193,55 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     !squares[ghost.currentIndex + direction].classList.contains('wall')
                  ){
 
-                    squares[ghost.currentIndex].classList.remove(ghost.className,'ghost');
+                    squares[ghost.currentIndex].classList.remove(ghost.className,'ghost','scared-ghost');
                     ghost.currentIndex += direction;
                     squares[ghost.currentIndex].classList.add(ghost.className,'ghost');
+                }
+                else direction =directions[Math.floor(Math.random()* directions.length)];
+
+                if(ghost.isScared){
+                    squares[ghost.currentIndex].classList.add('scared-ghost');
 
                 }
-                
-                
+                    //if the ghost is currently scared and pacman is on it 
+                    if(ghost.isScared && squares[ghost.currentIndex].classList.contains('pac-man')){
+                        ghost.isScared=false;
+                        squares[ghost.currentIndex].classList.remove(ghost.className,'ghost' ,'scared-ghost');
+                        ghost.currentIndex= ghost.startIndex;
+                        score+=100;
+                        scoreDisplay.innerHTML=score;
+                        squares[ghost.currentIndex].classList.add(ghost.className,'ghost');
+                    }
+
+                    
             }, ghost.speed)
         } 
 
+        // check for game over
+        function chekcForGameOver(){
+            if(squares[pacmanCurrentIndex].classList.contains('ghost') &&
+              !squares[pacmanCurrentIndex].classList.contains('scared-ghost') 
+            ){
+                ghosts.forEach(ghost=> clearInterval(ghost.timerId))
+                document.removeEventListener('keyup',movePacman);
+                setTimeout(function(){
+                    alert('Game Over')
+                },500)
+             }
+
+            
+        }
+        // check for win
+
+        function chekcForWin(){
+            if( score >=274){
+                ghosts.forEach(ghost => clearInterval(ghost.timerId));
+                document.removeEventListener('keyup',movePacman);
+                setTimeout(function(){
+                    alert('GG◊ You have won ◊GG')
+                },500)
+            }
+        }
 
 
 
@@ -206,6 +257,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 
+console.log(powerPellet.length)
 
 
 
