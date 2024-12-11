@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // 3= power-pellet
     // 4= empty
 
-
+console.log(layout.length)
     const squares=[];
 
     function createBoard (){
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // check for win
 
         function chekcForWin(){
-            if( score >=274){
+            if( score >=400){
                 ghosts.forEach(ghost => clearInterval(ghost.timerId));
                 document.removeEventListener('keyup',movePacman);
                 setTimeout(function(){
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 
-console.log(powerPellet.length)
+
 
 
 
