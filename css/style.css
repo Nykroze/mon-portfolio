@@ -48,6 +48,9 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 30px 10%;
+    padding-bottom: 5px ;
+    padding-top: 10px;
+    border-bottom: solid black 1px ;
 }
 
 
@@ -82,6 +85,7 @@ a{
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
+    color: #FFFFFF;
 }
 /*le code en dessous va me permettre  de changer la le style d'un des élement de la navBAR */
 .effet{
@@ -178,9 +182,6 @@ title span{
         display: inline;
         height: auto; 
     }
-   
-    
-    
     
 }
 /*le code en dessous est la source de configuration du style du portfolio*/
@@ -230,20 +231,6 @@ title span{
     margin-bottom: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*le code en dessous nous permet de fixer le footer en bas de la page */
 footer{
     
@@ -259,8 +246,227 @@ display:flex;
     background: none;
     border-top: solid black;
 }
+
+.nav__linksS a{
+    list-style: none;
+    color: black
+}
+
+/* le code en dessous me permet de mettre le contenue sur la meme ligne */
+.nav__linksS li{
+    display: inline-flex;
+  
+    padding: 0 5px;
+}
+/*les code en essous nous permet de donnez un effet de transition a la class selectionner */
+.nav__linksS li a  {
+    transition: transform.3  ;
+}
+.nav__linksS li a:hover{
+    color: #0C969C;
+}
+
+
+/*le code en dessous va me permetre de crée un systeme "burger" pour les lien qui seront cacher suite au responsive design que je ferais  */
+.burger{
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 1rem ;
+
+}
+
+.burger .bar{
+    width: 22px;
+    height: 3px;
+    background-color: black;
+    display: block;
+}
+.burger .bar::after, 
+.burger .bar::before{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    background-color: black;
+}
+.burger .bar::before{
+    transform: translateY(8px);
+}
+.burger .bar::after{
+    transform: translateY(-8px);
+}
+
+@media screen  and (min-width:750px) {
+    .burger{
+        display: none;
+    }
+    
+}
+@media screen  and (max-width:749px) {
+    .header{
+        margin-top: 0;
+        position: fixed;
+        width: 100%;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        z-index: 2;
+        background: #ffffff;
+        border-bottom: solid black 1px;
+
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 55px;
+        position: fixed;
+        background: #FFFFFF ;
+        height: calc(100vh - 5px) ;
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        left: 110%;
+        transition: all .4s ease-out;
+    }
+    .nav__links li {
+        display: flex;
+        justify-content: center;
+    }
+    .nav__links a {
+        display: block;
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    .show-nav nav {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+        z-index: 2;
+    }
+    .show-nav .burger .bar{
+        width: 0;
+    }
+    .show-nav .burger .bar::after{
+        transform: rotate(-45deg);
+    }
+    .show-nav .burger .bar::before{
+        transform: rotate(45deg);
+    }
+    .burger .bar::after ,
+    .burger .bar::before{
+transition: all .2s ease-out;
+    }
+
     
     
+}
+    
+
+/* je vais céer une classe pour le dark-mode de ma page */
+.dark-mode{
+    
+    background-color: rgb(46, 46, 46);
+    color: #FFFFFF;
+
+    @media screen  and (max-width:749px) {
+        .header{
+            background:rgb(46, 46, 46) ;
+            border-bottom: solid white 1px;
+        }
+        
+    }
+    .description__projets{
+        color: white;
+    }
+    .portfolio{
+        color: white;
+    }
+    .portfolio:hover{
+        color: #0C969C;
+    }
+    .hire__me{
+        color: white;
+    }
+    .hire__me:hover{
+        color: #0C969C;
+    
+    }
+    .header{
+        border-bottom: solid white 1px;
+    }
+    .nav__links a{
+        color: white;
+    }
+    footer{
+        color: white;
+        border-top: solid #FFFFFF;
+    }
+    nav{
+        background: rgb(46, 46, 46);
+    }
+    .burger .bar{
+        background-color: white;
+    }
+    .burger .bar::before,
+    .burger .bar::after{
+       background-color: white;
+    }
+}
+.switch-dark-Mode{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border: none;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 30px;
+    top: 19px;
+    background-color: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:749px) {
+    .switch-dark-Mode{
+        right: 5px;
+        top: 70px;
+    }
+}
+
+
+/* reglage btn du  choix entre le mode nuit et jour , a refaire !!!!! */
+
+
+.themSwitch{
+    background-image:url("../image/logo/brightness-high-fill.svg ");
+    background-size: 39px 39px;
+    
+    transition: .3s  ;
+}
+.themSwitch:hover{
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.imgDark{
+    transition: .3s;
+}
+.imgDark:hover{
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
 
 

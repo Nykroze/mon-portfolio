@@ -37,12 +37,12 @@ function direction(event){
 function draw (){
     context.clearRect(0,0,400,400)
     for(let i=0;i < snake.length;i++){
-        context.fillStyle=(i ==0) ? "green" : "white"
+        context.fillStyle=(i ==0) ? "blue" : "cyan"
         context.fillRect(snake[i].x, snake[i].y,box,box)
-        context.strokeStyle= "red"
+        context.strokeStyle= "blue"
         context.strokeRect(snake[i].x,snake[i].y,box,box)
     }
-    context.fillStyle="orange"
+    context.fillStyle="red"
     context.fillRect(food.x,food.y,box,box);
 
     let snakeX= snake[0].x;
@@ -75,7 +75,7 @@ function draw (){
     }
     
     snake.unshift(newHead);
-    context.fillStyle="red"
+    context.fillStyle="blue"
     context.font="30px Arial"
     context.fillText(score,2*box,1.6*box)
 }
@@ -88,4 +88,4 @@ function collision(head,array){
     }
 }
 //le code en dessous permet de gere la vitesse du serpent 
-let game= setInterval(draw,80)
+let game= setInterval(draw,90)
