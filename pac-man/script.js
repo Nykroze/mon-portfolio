@@ -234,7 +234,7 @@ console.log(layout.length)
         // check for win
 
         function chekcForWin(){
-            if( score >=400){
+            if( score >=374){
                 ghosts.forEach(ghost => clearInterval(ghost.timerId));
                 document.removeEventListener('keyup',movePacman);
                 setTimeout(function(){
