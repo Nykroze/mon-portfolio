@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="/image/icon/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/style.css">
+<script src="serv/node.js" defer></script>
 <script src="/script.js" defer></script>
     <title>manu</title>
 </head>
@@ -55,7 +56,7 @@
                         Je suis un développeur web débutant avec une soif d’apprendre ! Après avoir acquis les bases en HTML et CSS, je me perfectionne actuellement en JavaScript et Node.js. Mon objectif : construire des solutions web intuitives et performantes. Découvrez mes projets et mon évolution ci-dessous !
                     </p>
                     <div class="action__btns">
-                        <button class="hire__me"> Contact  </button>
+                        <button class="contact"> Contact  </button>
                         <button class="portfolio">Portfolio</button>
                     </div>    
                 </div>
@@ -73,6 +74,34 @@
     <div class="portfolio__item"><a href="#"><img src="/image/imgautre/todolist.jpg" alt="" height="250" width="300"><div class="description__projets">TODOLIST</div></a></div>
 </div>
 </section>
+
+        <!-- popup contact -->
+        <div class="popupContact">
+
+             <form class="popupDesign" action="mailto:manu2004nde@gmail.com" method="post" enctype="text/plain" >
+                <div class="backContainer">
+                   
+                        
+                        <label for="name"></label>
+                        <input class="designName" type="text" id="name" name="name" required  placeholder="Name"><br>
+                        
+                        <label for="email"></label>
+                        <input class="designEmail" type="email" id="email" name="email" placeholder="Email"> <br>
+                        
+                        <label for="message"></label> 
+                        <textarea class="designeMessage" name="message" id="message" placeholder="Message"></textarea> <br>
+                        <div class="button">
+
+                            <button class="reset" type="reset" >Annuler</button>
+                            <button class="submit" type="submit">Envoyer</button>
+                        </div>
+                   
+                </div>
+                </form>
+        </div>
+
+        <!-- popup contact  -->
+
     <footer class="footer">
         <p>N'de Williams 2024 © All Right Reserved</p>
     </footer>

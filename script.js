@@ -16,19 +16,36 @@ function menuMobile(){
     })
 }
 menuMobile();
-
+// une fonction pour le mode nuit et jour
 function darkMode(){
     const body=document.querySelector('.body');
-    const light= document.querySelector('.imgLight');
-    const dark =document.querySelector('.imgDark');
     const switchMode= document.querySelector('.switch-dark-Mode');
-    
-    
     switchMode.addEventListener('click', ()=>{
         body.classList.toggle('dark-mode');
         switchMode.classList.toggle('themSwitch');
-    
-        
     })
 }
 darkMode();
+// une fonction pour le boutton "contact"
+function popupContact(){
+const popupContact = document.querySelector('.popupContact');
+console.log(popupContact);
+const btnContact = document.querySelector('.contact')
+console.log(btnContact);
+const btnCancel =document.querySelector('.reset')
+console.log(btnCancel);
+
+btnContact.addEventListener('click', ()=>{
+    popupContact.classList.add('start');
+
+    
+});
+
+btnCancel.addEventListener('click', ()=>{
+    popupContact.classList.remove('start')
+})
+}
+popupContact();
+// un fonction pour desactiver le scroll
+
+

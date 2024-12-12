@@ -141,10 +141,10 @@ title span{
     transition: 0.3s;
     cursor: pointer;
 }
-.hire__me{
+.contact{
     background: none;
 }
-.hire__me:hover{
+.contact:hover{
     color: #0C969C
     
 }
@@ -390,10 +390,10 @@ transition: all .2s ease-out;
     .portfolio:hover{
         color: #0C969C;
     }
-    .hire__me{
+    .contact{
         color: white;
     }
-    .hire__me:hover{
+    .contact:hover{
         color: #0C969C;
     
     }
@@ -468,5 +468,98 @@ transition: all .2s ease-out;
     transform: scale(1.2);
 }
 
+/* configuaration des popup*/
+.popupContact{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    
+}
+.popupContact.start{
+    display: flex;
+}
+.backContainer{
+    
+    width: 400px;
+   backdrop-filter: blur(10px);
+   background-color: rgb(0, 0, 0,0.5);
+    backdrop-filter: blur(10px) ;
+    display: flex;
+   padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 15px;
+    align-items: center; 
+    
+    height: 400px;
+}
+.designName{
+    font-family: Arial,  Helvetica, sans-serif;
+    padding-left: 10px;
+    border: none;
+   height: 40px;
+    border-radius: 10px;
+    font-size: 17px;
+    width: 70%;
+    padding: 10px;
+    
+}
+.designEmail{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
+   border-radius: 10px;
+   border: none;
+   padding-left: 10px;
+    font-size: 17px;
+    width: 70%;
+    padding: 10px;
+}
+.designeMessage{
+    font-family: Arial, Helvetica, sans-serif;
+padding: 10px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px;
+}
+.button{
+    display: flex;
+    gap: 50px;
+}
+.submit{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+.reset{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
 
-
+.popupDesign{
+    
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
