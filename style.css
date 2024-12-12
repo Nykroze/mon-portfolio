@@ -9,9 +9,7 @@
     margin: 0;
     padding: 0;
     
-    
-    
-}
+ }
 main{
     margin-top: 80px;
     display: grid;
@@ -58,6 +56,7 @@ header{
 /*les code en dessous nous permet d'enlever de design par defaut des lien */
 a{
     text-decoration: none;
+    
     
 }
 .nav__links a{
@@ -148,6 +147,7 @@ title span{
     color: #0C969C
     
 }
+
 .portfolio{
     background: none;
 }
@@ -545,6 +545,9 @@ padding: 10px;
     border: none;
     padding: 10px;
 }
+.submit:hover{
+    cursor: pointer;
+}
 .reset{
     display: inline;
     font-family: Arial, Helvetica, sans-serif;
@@ -555,7 +558,9 @@ padding: 10px;
     border: none;
     padding: 10px;
 }
-
+.reset:hover{
+    cursor: pointer;
+}
 .popupDesign{
     
     padding: 30px;
