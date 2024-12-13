@@ -46,6 +46,6 @@ btnCancel.addEventListener('click', ()=>{
 })
 }
 popupContact();
-// un fonction pour desactiver le scroll
+// une fonction pour desactiver le scroll
 
 
