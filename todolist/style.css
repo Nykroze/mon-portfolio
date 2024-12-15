@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 body{
     display: flex;
     justify-content: center;
@@ -7,6 +8,7 @@ body{
     height: 100vh;
     margin: 0;
     background: gray;
+   
 }
 
 .title{
@@ -85,4 +87,8 @@ button{
 
 img{
     background: none;
+}
+h5{
+    margin-top: 200px;
+    color: aqua;
 }

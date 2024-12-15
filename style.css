@@ -468,7 +468,7 @@ transition: all .2s ease-out;
     transform: scale(1.2);
 }
 
-/* configuaration des popup*/
+/* configuaration des popups*/
 .popupContact{
     display: none;
     position: fixed;

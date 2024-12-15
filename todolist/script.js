@@ -46,3 +46,4 @@ function deleteTask(task){
     taskList.removeChild(task);
 
 }
+//projet en cours l'utilisation d'une base de donnée est envisager 
