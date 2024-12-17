@@ -31,6 +31,7 @@ function majTasks() {
   //la partie d'ajout
 function addTask(){
 
+
     let taskInpunt =document.getElementById('taskInput')
     let taskText = taskInpunt.value;
      
@@ -47,6 +48,10 @@ localStorage.setItem('tasks',JSON.stringify(tasks));
 majTasks();
 taskInpunt.value="";
 }
+
+
+
+
 //la partie de modification
 
 function editTask(taskId){
