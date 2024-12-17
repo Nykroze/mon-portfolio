@@ -29,11 +29,11 @@ darkMode();
 // une fonction pour le boutton "contact"
 function popupContact(){
 const popupContact = document.querySelector('.popupContact');
-console.log(popupContact);
+
 const btnContact = document.querySelector('.contact')
-console.log(btnContact);
+
 const btnCancel =document.querySelector('.reset')
-console.log(btnCancel);
+
 
 btnContact.addEventListener('click', ()=>{
     popupContact.classList.add('start');
