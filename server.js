@@ -26,7 +26,7 @@ app.post('/contact', (req, res) => {
 
 // verification des champs
     if(!email || !message || !name){
-        console.log(message,name,email)
+       
         return res.status(400).send('L\'email et le message sont obligatoires');
     }
 
