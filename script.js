@@ -26,6 +26,8 @@ function darkMode(){
     })
 }
 darkMode();
+
+
 // une fonction pour le boutton "contact"
 function popupContact(){
 const popupContact = document.querySelector('.popupContact');
@@ -40,12 +42,13 @@ btnContact.addEventListener('click', ()=>{
 
     
 });
-
 btnCancel.addEventListener('click', ()=>{
     popupContact.classList.remove('start')
 })
 }
+
+
 popupContact();
-// une fonction pour desactiver le scroll
+
 
 

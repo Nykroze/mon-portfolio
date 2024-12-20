@@ -1,7 +1,6 @@
 let taskList= document.getElementById('taskList');
 let tasks =JSON.parse(localStorage.getItem('tasks'))|| [];
 
-
 function majTasks() {
     taskList.innerHTML = ''; // Vider la liste 
     tasks.forEach(task => {
