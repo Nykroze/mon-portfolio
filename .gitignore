@@ -1,3 +1,4 @@
 node_modules/
 .env
 fichier-trash-a-analysé/
+server.js
