@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
-const PORT = 3000;
+// const PORT = 3000;
 
 app.use(express.static('public'));
 
@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS
-    }
+    } 
 });
 // Route pour afficher un message après l'envoi
 
@@ -57,8 +57,10 @@ app.post('/contact', (req, res) => {
     console.log(`Email reçu: ${email}`);
     console.log(`Message reçu: ${message}`);
 });
-
+/*
 // Démarrage du serveur
+
 app.listen(PORT, () => {
     console.log(`Serveur en écoute sur le port : ${PORT}`);
 });
+*/
